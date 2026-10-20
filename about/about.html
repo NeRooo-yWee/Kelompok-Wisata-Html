@@ -9,27 +9,84 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f3f6fb;
     }
     .about-section {
       text-align: center;
-      padding: 50px 20px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
     }
-    /* Logo Kampus */
+    .campus-intro {
+      margin: 0 auto 42px;
+    }
+    .logo-frame {
+      position: relative;
+      display: grid;
+      width: 144px;
+      height: 144px;
+      margin: 0 auto 26px;
+      place-items: center;
+      background: radial-gradient(circle at 32% 28%, #ffffff, #e4f5ff 72%);
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 7px rgba(88, 112, 228, 0.13), 0 10px 26px rgba(45, 76, 160, 0.17);
+      animation: logoFloat 3.5s ease-in-out infinite;
+    }
+    .logo-frame::before {
+      position: absolute;
+      inset: -11px;
+      content: "";
+      border: 1px solid rgba(212, 160, 23, 0.58);
+      border-radius: 50%;
+      animation: logoHalo 3.5s ease-in-out infinite;
+    }
     .about-section .logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      width: 108px;
+      height: 108px;
+      object-fit: contain;
     }
-    .about-section .logo:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .campus-copy {
+      margin: 0 auto;
     }
-    .about-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      color: #333;
+    .campus-copy .eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 7px 15px;
+      color: #755400;
+      font-size: 0.78em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: #fff2cc;
+      border: 1px solid #f2dc9d;
+      border-radius: 999px;
+    }
+    .campus-copy h2 {
+      margin: 0 0 10px;
+      color: #26345d;
+      font-size: clamp(1.45em, 3.5vw, 1.9em);
+    }
+    .campus-copy .campus-description {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #596579;
+      font-size: 1em;
+      line-height: 1.7;
+    }
+    .about-section > h2 {
+      margin: 0 0 30px;
+      color: #26345d;
+      font-size: clamp(2em, 5vw, 2.5em);
+    }
+    .about-section > h2::after {
+      display: block;
+      width: 64px;
+      height: 4px;
+      margin: 14px auto 0;
+      content: "";
+      background: #d4a017;
+      border-radius: 999px;
     }
     .team-container {
       display: grid;
@@ -40,14 +97,15 @@
     }
     .team-member {
       background: #fff;
-      border-radius: 10px;
+      border: 1px solid #e6eaf2;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 22px rgba(35, 52, 94, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .team-member:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(35, 52, 94, 0.14);
     }
     .team-member img {
       width: 100%;
@@ -84,7 +142,45 @@
         transform: translateY(0);
       }
     }
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes logoHalo {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      .about-section {
+        padding: 28px 16px 44px;
+      }
+      .campus-intro {
+        margin-bottom: 36px;
+      }
+      .logo-frame {
+        width: 128px;
+        height: 128px;
+      }
+      .about-section .logo {
+        width: 96px;
+        height: 96px;
+      }
+      .campus-copy .campus-description {
+        font-size: 0.95em;
+      }
+      .team-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 14px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .logo-frame,
+      .logo-frame::before {
+        animation: none;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="../assets/responsive.css">
 </head>
 <body>
   <table width="100%" border="0" cellpadding="10" cellspacing="0" bgcolor="#5870e4">
@@ -103,7 +199,7 @@
       <a href="../about/about.html"><font color="#ffffff" size="2"><b>Tentang Kami</b></font></a>
     </td>
     <td width="15%" align="right" valign="middle">
-      <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Pesona%20Nusantara,%20saya%20ingin%20konsultasi%20perjalanan%20wisata%20ke%20Indonesia" target="_blank">
+      <a href="https://wa.me/6285159466016?text=Halo%20Der,%20saya%20ingin%20konsultasi%20perjalanan%20wisata%20ke%20Indonesia" target="_blank">
         <font color="#ffffff" size="3"><b> Hubungi Kami &rarr;</b></font>
       </a>
     </td>
@@ -111,36 +207,42 @@
 </table>
 <!-- navigation selesai -->
   <section class="about-section" id="tim">
-    <!-- Logo Kampus -->
-    <img class="logo" src="https://ts3.mm.bing.net/th?id=OIP.0_XnK2Ueqa4_BOvzgKlhHwHaHW&pid=15.1" alt="Logo Kampus" />
-      <h3 style="text-align:center">Universitas Indraprasta PGRI</h3>
+    <div class="campus-intro">
+              <img src="../assets/img/Logo-Universitas-Indraprasta-PGRI-Unindra-1536x1152.png" alt="Logo Universitas Indraprasta PGRI" />
+
+      <div class="campus-copy">
+        <p > Kelompok 4</p>
+        <h2>Universitas Indraprasta PGRI</h2>
+        <p class="campus-description">Perkenalkan, kami dari Kelompok 4. Website Pesona Nusantara ini kami susun sebagai tugas Pemogramaan web dasar, yang bertemakan wisata. Maka dari itu kami merancang web ini untuk memperkenalkan beragam destinasi wisata di Indonesia.</p>
+      </div>
+    </div>
     <h2>Tim Pengembang</h2>
     <div class="team-container">
       <div class="team-member">
-        <img src="../">
+        <img src="../assets/img/jay.jpeg" alt="Foto Thariq">
         <div class="team-info">
-          <h3>Thariq</h3>
+          <h3>Thariq A<span>.</span></h3>
           <p>202443501778</p>
         </div>
       </div>
       <div class="team-member">
-        <img src="../assets/img/atha.jpeg">
+        <img src="../assets/img/atha.jpeg" alt="Foto Athahillah">
         <div class="team-info">
-          <h3>Atha</h3>
+          <h3>Athahillah</h3>
           <p>202443501777</p>
         </div>
       </div>
       <div class="team-member">
         <img src="https://via.placeholder.com/200x200" alt="Member 3">
         <div class="team-info">
-          <h3>Adit</h3>
+          <h3>Pradipta</h3>
           <p>Backend Developer</p>
         </div>
       </div>
       <div class="team-member">
         <img src="../assets/img/rifqi.jpeg" alt="rifqi">
         <div class="team-info">
-          <h3>Rifqi</h3>
+          <h3>Rifqi P<span>.</span></h3>
           <p>202443501773</p>
         </div>
       </div>
@@ -152,13 +254,27 @@
         </div>
       </div>
       <div class="team-member">
-        <img src="https://via.placeholder.com/200x200" alt="Member 6">
+        <img src="../assets/img/rapi.jpeg" alt="Member 6">
         <div class="team-info">
-          <h3>Rafi</h3>
-          <p>Documentation</p>
+          <h3>Rafi R<span>.</span></h3>
+          <p>202443501761</p>
         </div>
       </div>
     </div>
   </section>
+
+    <table width="100%" border="0" cellpadding="20"
+            cellspacing="0" bgcolor="#2d4ce6">
+                <tr><td align="center">
+                    <font color="#d4a017" size="3"><b> Pesona Nusantara</b></font><br>
+                    <font color="#ffffff" size="2">Wonderful Indonesia Portal</font><br>
+                    <font size="2"><a href="../beranda/index.html">
+                        <font color="#ffffff">Beranda</font></a>
+                    &nbsp;|&nbsp; <a href="../beranda/index.html#destinasi"><font color="#ffffff">Destinasi Populer</font></a> &nbsp;|&nbsp;
+                    <a href="#tim"><font color="#ffffff">Tentang Kami</font></a>
+                    </font><br><br>
+                    <font color="#ffffff" size="1">Copyright &copy; 2026 Pesona Nusantara. All Rights Reserved.</font>
+                </td></tr>
+            </table>
 </body>
 </html>

@@ -16,6 +16,8 @@ Informasi yang tersedia mencakup:
 - Candi Borobudur
 - Danau Toba
 - Ubud, Bali
+- Nusa Tenggara Timur
+- Jawa Tengah
 
 Di halaman utama juga terdapat navigasi destinasi, kontak WhatsApp, dan testimoni.
 
@@ -32,6 +34,8 @@ Di halaman utama juga terdapat navigasi destinasi, kontak WhatsApp, dan testimon
     ├── detail.html
     ├── Jakarta/
     │   └── detail-[DESTINASI]-[JAKARTA].html
+    ├── Jateng/
+    │   └── jawa.html
     ├── Medan/
     │   └── detail-[DESTINASI]-[Medan].html
     ├── bali/
@@ -44,6 +48,8 @@ Di halaman utama juga terdapat navigasi destinasi, kontak WhatsApp, dan testimon
     │   └── detail-danau-toba.html
     ├── labuan-bajo/
     │   └── detail-labuan-bajo.html
+    ├── ntt/
+    │   └── detail-[DESTINASI]-[NTT].html
     └── raja-ampat/
         └── detail-[DESTINASI]-[PAPUA].html
 ```

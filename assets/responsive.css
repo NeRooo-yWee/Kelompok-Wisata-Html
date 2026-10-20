@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+table {
+  max-width: 100%;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+td,
+th {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  body > table {
+    table-layout: fixed;
+  }
+
+  body > table > tbody > tr > td {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  table[width="90%"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  table[width="90%"] > tbody > tr > td {
+    display: block;
+    width: 100% !important;
+  }
+
+  img[width="100%"] {
+    display: block;
+    height: auto !important;
+  }
+
+  iframe {
+    display: block;
+  }
+}
