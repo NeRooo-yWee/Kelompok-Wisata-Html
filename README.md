@@ -26,8 +26,7 @@ Di halaman utama juga terdapat navigasi destinasi, kontak WhatsApp, dan testimon
 ```text
 .
 ├── README.md
-├── beranda/
-│   └── index.html
+├── index.html
 ├── about/
 │   └── about.html
 └── Destinasi/
