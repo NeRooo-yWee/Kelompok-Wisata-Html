@@ -47,10 +47,10 @@
       height: 108px;
       object-fit: contain;
     }
-    .campus-copy {
+    .Penjelasan {
       margin: 0 auto;
     }
-    .campus-copy .eyebrow {
+    .Penjelasan .eyebrow {
       display: inline-block;
       margin: 0 0 12px;
       padding: 7px 15px;
@@ -62,12 +62,12 @@
       border: 1px solid #f2dc9d;
       border-radius: 999px;
     }
-    .campus-copy h2 {
+    .Penjelasan h2 {
       margin: 0 0 10px;
       color: #26345d;
       font-size: clamp(1.45em, 3.5vw, 1.9em);
     }
-    .campus-copy .campus-description {
+    .Penjelasan .campus-description {
       max-width: 680px;
       margin: 0 auto;
       color: #596579;
@@ -130,6 +130,74 @@
       transform: translateY(20px);
       animation: fadeInUp 0.8s forwards;
     }
+
+    .glass-btn {
+  position: relative;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.5px;
+}
+
+/* Variasi Warna Neon Violet */
+.glass-btn-violet {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.25) 0%,
+    rgba(79, 70, 229, 0.15) 100%
+  );
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+/* Efek Shine Highlight Samping */
+.glass-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+/* Hover State */
+.glass-btn-violet:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.45) 0%,
+    rgba(79, 70, 229, 0.3) 100%
+  );
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 12px 40px 0 rgba(147, 51, 234, 0.35),
+              inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.glass-btn:hover::before {
+  left: 100%;
+}
+
+/* Active State (Saat Diklik) */
+.glass-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+}
     .team-member:nth-child(1) { animation-delay: 0.2s; }
     .team-member:nth-child(2) { animation-delay: 0.4s; }
     .team-member:nth-child(3) { animation-delay: 0.6s; }
@@ -182,7 +250,7 @@
   </style>
   <link rel="stylesheet" href="../assets/responsive.css">
 </head>
-<body>
+<body id="aduh">
   <table width="100%" border="0" cellpadding="10" cellspacing="0" bgcolor="#5870e4">
   <tr>
     <td width="30%" valign="middle">
@@ -210,11 +278,16 @@
     <div class="campus-intro">
               <img src="../assets/img/Logo-Universitas-Indraprasta-PGRI-Unindra-1536x1152.png" alt="Logo Universitas Indraprasta PGRI" />
 
-      <div class="campus-copy">
-        <p > Kelompok 4</p>
+      <div class="Penjelasan">
+        <p id="jir" > Kelompok 4</p>
         <h2>Universitas Indraprasta PGRI</h2>
         <p class="campus-description">Perkenalkan, kami dari Kelompok 4. Website Pesona Nusantara ini kami susun sebagai tugas Pemogramaan web dasar, yang bertemakan wisata. Maka dari itu kami merancang web ini untuk memperkenalkan beragam destinasi wisata di Indonesia.</p>
       </div>
+      <br>
+      <button id="waduh" class="glass-btn glass-btn-violet">
+      <span style="color: #222;">Informasi lainnya &rarr;</span>
+      </button>
+      <p class="campus-description">Silahkan Klik tombol diatas untuk melihat informasi menarik. &uarr;</p>
     </div>
     <h2>Tim Pengembang</h2>
     <div class="team-container">
@@ -276,5 +349,19 @@
                     <font color="#ffffff" size="1">Copyright &copy; 2026 Pesona Nusantara. All Rights Reserved.</font>
                 </td></tr>
             </table>
+
+            <script>
+              const Btn = document.getElementById('waduh');
+              const bdy = document.getElementById('aduh');
+
+              Btn.addEventListener('click', function () {
+                bdy.innerHTML = `
+              <h1>Cemas kau dek, kena phishing BEK,BEK,BEK!!!</h1>
+              <p>Kamu sih.. iseng pencet tombol.</p>
+              <p>Data kamu jadi ke ambilkan sama kelompok kami 😆😆🤪</p>
+              `;
+                alert('Bakekok 🤪 ');
+              })
+            </script>
 </body>
 </html>
